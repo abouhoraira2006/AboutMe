@@ -112,7 +112,7 @@ export default function AdminPage() {
                   <button onClick={logout} className="rounded bg-zinc-700 px-4 py-2 text-white">تسجيل الخروج</button>
                 </div>
                 <div className="mt-6">
-                  <AdminEditor initial={initial} onSave={handleSave} onLoadRemote={reload} />
+                  <AdminEditor initial={initial} onSave={handleSave} onLoadRemote={async () => remote ?? null} />
                 </div>
                 <div>
                   <p className="text-sm text-zinc-400">الحالة:</p>
