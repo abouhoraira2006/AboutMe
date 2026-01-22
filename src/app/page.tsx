@@ -1,3 +1,6 @@
+"use client";
+
+import { useRemoteData } from "@/lib/useRemoteData";
 import data from "@/data/aboutme.json";
 import type { AboutMeData } from "@/data/types";
 import { Navbar } from "@/components/Navbar";
@@ -12,18 +15,26 @@ import { Footer } from "@/components/Footer";
 const aboutData = data as AboutMeData;
 
 export default function Home() {
+  const { data: remote, loading } = useRemoteData();
+  const about = (remote ?? aboutData) as AboutMeData;
+
   return (
     <div className="min-h-screen bg-slate-950 text-foreground">
-      <Navbar name={aboutData.name} />
+      <Navbar name={about.name} />
       <main className="pt-16">
-        <Hero data={aboutData} />
-        <AboutSection data={aboutData} />
-        <SkillsSection data={aboutData} />
-        <ProjectsSection data={aboutData} />
-        <SocialSection data={aboutData} />
-        <ContactSection data={aboutData} />
+        <div className="mx-auto max-w-5xl px-4 py-4">
+          {typeof window !== "undefined" && sessionStorage.getItem("admin_token") ? (
+            <a href="/admin" className="text-xs text-zinc-400">Admin</a>
+          ) : null}
+        </div>
+        <Hero data={about} />
+        <AboutSection data={about} />
+        <SkillsSection data={about} />
+        <ProjectsSection data={about} />
+        <SocialSection data={about} />
+        <ContactSection data={about} />
       </main>
-      <Footer data={aboutData} />
+      <Footer data={about} />
     </div>
   );
 }

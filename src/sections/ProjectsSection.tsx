@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { AboutMeData, Locale, Project } from "@/data/types";
 import { useLanguage } from "@/components/LanguageThemeProvider";
+import { FaGlobe } from "react-icons/fa";
 
 function tOptional(text: { en: string; ar: string } | undefined, locale: Locale) {
   if (!text) return "";
@@ -41,7 +42,7 @@ export function ProjectsSection({ data }: { data: AboutMeData }) {
         <div className="grid gap-5 md:grid-cols-2">
           {data.projects.map((project: Project, index: number) => (
             <motion.article
-              key={project.name}
+              key={project.id || project.name}
               custom={index}
               variants={cardVariants}
               initial="hidden"
@@ -85,6 +86,17 @@ export function ProjectsSection({ data }: { data: AboutMeData }) {
                     <span>
                       {locale === "en" ? "Google Play" : "Google Play"}
                     </span>
+                  </a>
+                )}
+                {project.website && (
+                  <a
+                    href={project.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex flex-1 items-center justify-center gap-1 rounded-full border border-emerald-500/40 bg-slate-900/70 px-3 py-1 text-emerald-200 transition-colors group-hover:bg-emerald-500/10"
+                  >
+                    <FaGlobe className="text-base" />
+                    <span>{locale === "en" ? "Website" : "Website"}</span>
                   </a>
                 )}
               </div>

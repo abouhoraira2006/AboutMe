@@ -11,10 +11,12 @@ export interface SkillCategory {
 }
 
 export interface Project {
+  id: string;
   name: string;
   description?: LocalizedText;
   github?: string;
   googlePlay?: string;
+  website?: string;
 }
 
 export interface SocialLinks {
@@ -25,6 +27,9 @@ export interface SocialLinks {
   github2?: string;
   discord?: string;
   email?: string;
+  youtube?: string;
+  // allow extra arbitrary accounts (key -> url)
+  extraAccounts?: Record<string, string>;
 }
 
 export interface AboutMeData {

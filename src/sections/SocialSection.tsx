@@ -21,7 +21,6 @@ interface SocialItem {
   color: string;
   glowColor: string;
 }
-
 interface BubbleProps {
   item: SocialItem;
   index: number;

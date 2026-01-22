@@ -25,7 +25,7 @@ export function Hero({ data }: { data: AboutMeData }) {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 pt-24 text-foreground"
+      className="relative flex min-h-[60vh] items-center justify-center overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-4 pt-8 text-foreground"
     >
       <div className="pointer-events-none absolute inset-0 opacity-60">
         <div className="bg-radial from-emerald-500/10 via-transparent to-transparent absolute -left-40 top-10 h-72 w-72 rounded-full blur-3xl" />
@@ -54,7 +54,7 @@ export function Hero({ data }: { data: AboutMeData }) {
         </motion.div>
 
         <motion.div
-          className="relative mt-6 h-52 w-52 md:mt-0 md:h-64 md:w-64"
+          className="relative mt-4 h-40 w-40 md:mt-0 md:h-52 md:w-52"
           variants={floatingVariants}
           animate="animate"
         >
