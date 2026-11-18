@@ -1,57 +1,61 @@
-## AboutMe – Personal Portfolio
+# Hammi Abou Houraira
 
-**AboutMe** is a modern, single-page personal website built with **Next.js**, **Tailwind CSS**, and **Framer Motion**.  
-It is fully responsive, supports **English / Arabic**, and includes **dark / light themes**.
+Welcome to my personal portfolio.
 
-### Tech Stack
+I am Hammi Abou Houraira, a Petroleum and Gas Production Engineering student with a strong interest in designing and building useful, well-crafted applications. This website is where I introduce myself, share some of my work, describe the technologies I use, and make it easier for people to get in touch.
 
-- **Framework**: Next.js (App Router, TypeScript)
-- **Styling**: Tailwind CSS v4 (via `@import "tailwindcss"`)
-- **Animations**: Framer Motion
-- **Theming**: `next-themes` (dark / light)
-- **Content Source**: Single JSON file `src/data/aboutme.json`
+## About this website
 
-### Project Structure
+I created this portfolio as a place to bring my work and interests together. It presents a little about who I am, what I build, and the tools I enjoy working with.
 
-- `src/app` – Next.js app router (`layout.tsx`, `page.tsx`, global styles)
-- `src/components` – Shared UI components (`Navbar`, `Footer`, `LanguageThemeProvider`)
-- `src/sections` – Page sections (Hero, About, Skills, Projects, Social, Contact)
-- `src/data` – `aboutme.json` (all content) and `types.ts`
+The website includes:
 
-### Content Management (aboutme.json)
+- An introduction and a short overview of my background
+- Selected applications and projects from Google Play and GitHub
+- My skills in mobile development, backend development, and related tools
+- Ways to contact me and follow my work
+- English and Arabic language support, including a complete right-to-left layout
+- Dark and light themes
+- A responsive interface designed for desktop and mobile screens
 
-All personal data (name, bio, skills, projects, social links) is defined in:
+## Technologies
 
-- `src/data/aboutme.json`
+The portfolio is built with:
 
-To customize the site, edit this JSON file only. The UI reads from it as the single source of truth.
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
 
-### Running the Project Locally
+It is exported as a static website and hosted with GitHub Pages.
+
+## Run locally
+
+You can run the website on your own machine with:
 
 ```bash
-cd aboutme-web
 npm install
 npm run dev
 ```
 
-Then open `http://localhost:3000` in your browser.
+Then open [http://localhost:3000](http://localhost:3000).
 
-### Language & Direction
+## Build
 
-- The **language toggle (EN / AR)** is in the navbar.
-- The layout automatically switches between **LTR (English)** and **RTL (Arabic)** by setting `dir` on `<html>`.
+To create a production build:
 
-### Theme
+```bash
+npm run build
+```
 
-- The **theme toggle** is in the navbar.
-- Uses system theme by default and persists the selection using `next-themes`.
+For the GitHub Pages static export:
 
-### Deployment
+```bash
+GITHUB_PAGES=1 npm run build
+```
 
-The app is ready for deployment on **Vercel** or **Netlify**:
+The generated website is placed in the `out` directory.
 
-- **Vercel**: import the project and build with the default Next.js settings.
-- **Netlify**: use `npm run build` as the build command and `next` adapter / Next.js support.
+---
 
-No extra configuration is required beyond standard Next.js deployment setup.
-
+A special thank you to **Abed Rafik** for designing and building this portfolio for me, and for the time and care he put into bringing it to life. I truly appreciate his support.
